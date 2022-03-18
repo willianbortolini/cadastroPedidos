@@ -25,19 +25,38 @@ viewForm.addEventListener('mousemove', e => {
     draw(x);
 });
 
-let quantidade = document.getElementById("quant")
-document.getElementById("buttonSub").addEventListener("click", function (event) {
-    event.preventDefault()
-    var atual = parseInt(quantidade.value)
-    if(atual > 1 ){
-    quantidade.value = atual-1
-    }
-});
+const bSubs = document.querySelectorAll('.buttonSub')
+bSubs.forEach(bSub => {
+    bSub.addEventListener("click", function (event) {
+        event.preventDefault()
+        var atual = parseInt(this.nextSibling.value)
+        if (atual >= 1) {
+            this.nextSibling.value = atual - 1
+        }
+    })
+})
 
-document.getElementById("buttonAdd").addEventListener("click", function (event) {
+const bAdds = document.querySelectorAll('.buttonAdd')
+bAdds.forEach(bAdd => {
+    bAdd.addEventListener("click", function (event) { 
+        event.preventDefault()
+        document.getElementById('alertText').style.display = "none";
+        var atual = parseInt(this.previousSibling.value)
+        if (atual < 100) {
+            this.previousSibling.value = atual + 1
+        }
+    })
+})
+
+document.getElementById("buttonEnviar").addEventListener("click", function (event) {
     event.preventDefault()
-    var atual = parseInt(quantidade.value)
-    if(atual < 100 ){
-    quantidade.value = atual+1
-    }
+    var reactQuant = parseInt(document.getElementById("React").value)
+    var vueQuant = parseInt(document.getElementById("Vue").value)
+    var angularQuant = parseInt(document.getElementById("Angular").value)
+    if((reactQuant+vueQuant+angularQuant) > 0){
+        document.getElementById('theForm').submit();
+    }else{
+        document.getElementById('alertText').style.display = "block";
+    }   
+
 });

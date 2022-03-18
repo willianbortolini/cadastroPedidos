@@ -17,32 +17,36 @@
         <div id="form" class="form">
             <div class="header-form">
                 
-                Folmulário<br>
+                Formulário<br>
                 para compra de <br>
                 <h3>Pacotes de adesivos</h3>
             </div>
             <div class="animate-canva">
                 <canvas id="header-canva"></canvas>
             </div>
-            <form action="/action_page.php">
+            <form id="theForm" action="/action.php">
                 <div class="body-form">
-                    <h4> Quais adesivos:</h4>
+                    <h4> Indique a quantidade dos adesivos que deseja</h4>
 
-                    <input type="checkbox" name="React" value="React">
-                    <label for="1"> React</label><br>
-                    <input type="checkbox" name="Vue" value="Vue">
-                    <label for="2"> Vue</label><br>
-                    <input type="checkbox" name="Angular" value="Angular">
-                    <label for="3"> Angular</label><br><br>
+                    <div class="alert"><span id="alertText">*adicione ao menos um adesivo</span></div>
+                    
+                    <button class="numButton buttonSub">-</button><input name="React" id="React" type="number" value="0"><button class="numButton buttonAdd">+</button>
+                        <label for="1"> React</label><br>
+                    
+                    
+                    <button class="numButton buttonSub">-</button><input name="Vue" id="Vue" type="number" value="0"><button class="numButton buttonAdd">+</button>
+                        <label for="2"> Vue</label><br>
+                   
+                        <button class="numButton buttonSub" >-</button><input name="Angular" id="Angular" type="number" value="0"><button class="numButton buttonAdd">+</button>
+                        <label for="3"> Angular</label><br>
+                    
 
-                    <h4> Quantos adesivos de cada?</h4>
-                    <button class="numButton" id="buttonSub">-</button><input id="quant" type="number" value="1"><button class="numButton"
-                        id="buttonAdd">+</button>
+                    
                     <h4> Observações</h4>
                     <textarea name="recado"placeholder="Alguma duvida? Recado?"></textarea>
                 </div>
                 <div class="footer-form">
-                    <button id="buttonSub">Enviar</button>
+                    <button id="buttonEnviar">Enviar</button>
                 </div>
 
             </form>
