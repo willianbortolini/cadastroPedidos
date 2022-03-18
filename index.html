@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,100&display=swap"
+        rel="stylesheet">
+    <title>Seu adesivo</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="form" class="form">
+            <div class="header-form">
+                
+                Folmulário<br>
+                para compra de <br>
+                <h3>Pacotes de adesivos</h3>
+            </div>
+            <div class="animate-canva">
+                <canvas id="header-canva"></canvas>
+            </div>
+            <form action="/action_page.php">
+                <div class="body-form">
+                    <h4> Quais adesivos:</h4>
+
+                    <input type="checkbox" name="React" value="React">
+                    <label for="1"> React</label><br>
+                    <input type="checkbox" name="Vue" value="Vue">
+                    <label for="2"> Vue</label><br>
+                    <input type="checkbox" name="Angular" value="Angular">
+                    <label for="3"> Angular</label><br><br>
+
+                    <h4> Quantos adesivos de cada?</h4>
+                    <button class="numButton" id="buttonSub">-</button><input id="quant" type="number" value="1"><button class="numButton"
+                        id="buttonAdd">+</button>
+                    <h4> Observação</h4>
+                    <textarea name="recado"placeholder="Alguma duvida? Recado?"></textarea>
+                </div>
+                <div class="footer-form">
+                    <button id="buttonSub">Enviar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
